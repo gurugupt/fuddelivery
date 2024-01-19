@@ -19,5 +19,17 @@ public class GlobalExceptionHandler {
 
     }
 
+    @ExceptionHandler(RolesNotFound.class)
+    public ResponseEntity<ErrorMessage> rolesNotFound(RolesNotFound ex)
+    {
+        Integer statusCode = HttpStatus.BAD_REQUEST.value();
+        String message = ex.getMessage();
+        ErrorMessage errorMessage = new ErrorMessage(statusCode,message);
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+
+    }
+
+
 
 }

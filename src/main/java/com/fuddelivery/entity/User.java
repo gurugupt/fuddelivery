@@ -93,16 +93,16 @@ public class User {
     private LocalDateTime otpSendingTime;
     private LocalDateTime otpExpireTime;
 
-    @ManyToMany (mappedBy="user")
-    private List<Roles> roles;
+//    @ManyToMany (mappedBy="user")
+//    private List<Roles> roles;
 
 
-//    @ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
-//    @JoinTable(name = "user_roles" ,
-//            joinColumns =@JoinColumn(name = "user_id", referencedColumnName = "id"),
-//            inverseJoinColumns =@JoinColumn(name = "role_id",referencedColumnName = "id")
-//    )
-//    private Set<Roles> roles;
+    @ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    @JoinTable(name = "roles_user" ,
+            joinColumns =@JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns =@JoinColumn(name = "roles_id",referencedColumnName = "id")
+    )
+    private Set<Roles> roles;
 
 //    @OneToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
 //    private Cart cart;

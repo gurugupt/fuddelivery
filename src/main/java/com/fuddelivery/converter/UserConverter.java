@@ -18,6 +18,7 @@ public interface UserConverter {
                 .city(userDto.getCity())
                 .address(userDto.getAddress())
                 .password(userDto.getPassword())
+                .firstName(userDto.getFirstName())
                 .lastName(userDto.getLastName())
                 .dateOfBirth(userDto.getDateOfBirth())
                 .countryCode(userDto.getCountryCode())
